@@ -12,8 +12,9 @@ import GoogleSignIn
 struct HomeView: View {
   // 1
   @EnvironmentObject var viewModel: AuthenticationViewModel
-    @State private var image: Image?
+  @State private var image: Image?
   @State private var showingImagePicker = false
+  @State private var showingSelectedImage = false
   @State private var inputImage: UIImage?
     
   // 2
@@ -53,7 +54,44 @@ struct HomeView: View {
         .background(Color(.secondarySystemBackground))
         .cornerRadius(12)
         .padding()
-        
+          
+          
+          Button("Save Image") {
+              guard let inputImage = inputImage else { return }
+
+              let imageSaver = ImageSaver()
+              imageSaver.writeToPhotoAlbum(image: inputImage)
+              
+            
+             
+          }
+          
+          Button("Show Selected Image")
+          {
+              guard let inputImage = inputImage else { return }
+              showingSelectedImage = true
+          }
+          
+          Button("Test Download")
+          {
+              let databaseFunctionObject = DatabaseFunctions.sharedInstance
+              databaseFunctionObject.fetchImage(key: "rpslogo") { image in
+                       let imageSaver = ImageSaver()
+                       imageSaver.writeToPhotoAlbum(image: image!)
+                   }
+          }
+          
+          
+          Button("Test Upload to Firebase")
+          {
+              let databaseFunctionObject = DatabaseFunctions.sharedInstance
+              if let image = UIImage(named: "rpslogo.png")
+              {
+                  databaseFunctionObject.uploadImage(image: image, key: "rpslogo")
+              }
+              
+          }
+          
         Spacer()
         
         // 4
@@ -68,12 +106,24 @@ struct HomeView: View {
         }
       }
       .navigationTitle("DanielPhotoApp")
+        
+        
+        
+        
     }
     .navigationViewStyle(StackNavigationViewStyle())
-    .onChange(of: inputImage) { _ in loadImage() }
-    .sheet(isPresented: $showingImagePicker) {
-        ImagePicker(image: $inputImage)
+   // .onChange(of: inputImage) { _ in loadImage() }
+    .sheet(isPresented: $showingSelectedImage) {
+    
+       Image(uiImage: inputImage!)
+        
     }
+    .sheet(isPresented: $showingImagePicker) {
+        ImagePickerView(selectedImage: $inputImage, sourceType: .photoLibrary)
+        
+    }
+     
+ 
   }
  func loadImage() {
     guard let inputImage = inputImage else { return }

@@ -39,12 +39,12 @@ extension DanielPhotoAppApp {
           databaseFunctionObject.uploadImage(image: image, key: "mhlogo")
       }
       
-      databaseFunctionObject.fetchImage(key: "mhlogo") { image in
-          print("&&&&&&&")
-          print(type(of:image))
-          
-          let imageSaver = ImageSaver()
-          imageSaver.writeToPhotoAlbum(image: image!)
-      }
+//      databaseFunctionObject.fetchImage(key: "mhlogo") { image in
+//          print("&&&&&&&")
+//          print(type(of:image))
+//          
+//          let imageSaver = ImageSaver()
+//          imageSaver.writeToPhotoAlbum(image: image!)
+//      }
   }
 }
