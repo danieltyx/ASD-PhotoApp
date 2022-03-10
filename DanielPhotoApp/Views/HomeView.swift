@@ -12,7 +12,10 @@ import GoogleSignIn
 struct HomeView: View {
   // 1
   @EnvironmentObject var viewModel: AuthenticationViewModel
-  
+    @State private var image: Image?
+  @State private var showingImagePicker = false
+  @State private var inputImage: UIImage?
+    
   // 2
   private let user = GIDSignIn.sharedInstance.currentUser
   
@@ -24,10 +27,10 @@ struct HomeView: View {
           
             Button(action:
                     {
-                
+                showingImagePicker = true
             })
             {
-                
+                Text("Show Gallery")
             }
             
           NetworkImage(url: user?.profile?.imageURL(withDimension: 200))
@@ -67,7 +70,15 @@ struct HomeView: View {
       .navigationTitle("DanielPhotoApp")
     }
     .navigationViewStyle(StackNavigationViewStyle())
+    .onChange(of: inputImage) { _ in loadImage() }
+    .sheet(isPresented: $showingImagePicker) {
+        ImagePicker(image: $inputImage)
+    }
   }
+ func loadImage() {
+    guard let inputImage = inputImage else { return }
+    image = Image(uiImage: inputImage)
+ }
 }
 
 /// A generic view that shows images from the network.
