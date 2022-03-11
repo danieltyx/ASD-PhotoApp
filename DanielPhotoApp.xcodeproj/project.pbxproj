@@ -21,6 +21,7 @@
 		4093B78827D997BA0095658F /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093B78727D997BA0095658F /* ImageSaver.swift */; };
 		40BFFCDD27DA669F0000B7C3 /* SingleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFFCDC27DA669F0000B7C3 /* SingleImageView.swift */; };
 		40BFFCE027DB00480000B7C3 /* DownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFFCDF27DB00480000B7C3 /* DownloadView.swift */; };
+		40BFFCE227DB07C00000B7C3 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFFCE127DB07C00000B7C3 /* ImagePickerView.swift */; };
 		40DEA12227C5601E000849CD /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DEA12127C5601E000849CD /* AuthenticationViewModel.swift */; };
 		40DEA12427C5669F000849CD /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DEA12327C5669F000849CD /* GoogleSignInButton.swift */; };
 		40DEA12627C566B8000849CD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DEA12527C566B8000849CD /* LoginView.swift */; };
@@ -41,6 +42,7 @@
 		4093B78727D997BA0095658F /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		40BFFCDC27DA669F0000B7C3 /* SingleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageView.swift; sourceTree = "<group>"; };
 		40BFFCDF27DB00480000B7C3 /* DownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadView.swift; sourceTree = "<group>"; };
+		40BFFCE127DB07C00000B7C3 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		40DEA12127C5601E000849CD /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		40DEA12327C5669F000849CD /* GoogleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInButton.swift; sourceTree = "<group>"; };
 		40DEA12527C566B8000849CD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				40DEA12327C5669F000849CD /* GoogleSignInButton.swift */,
 				40DEA12B27C7E9C8000849CD /* ImagePicker.swift */,
+				40BFFCE127DB07C00000B7C3 /* ImagePickerView.swift */,
 				4093B78727D997BA0095658F /* ImageSaver.swift */,
 				40DEA12927C7E75E000849CD /* Coordinator.swift */,
 				40DEA12D27CD21BE000849CD /* Databasefunctions.swift */,
@@ -222,6 +225,7 @@
 				40DEA12C27C7E9C8000849CD /* ImagePicker.swift in Sources */,
 				40DEA12E27CD21BE000849CD /* Databasefunctions.swift in Sources */,
 				40DEA12627C566B8000849CD /* LoginView.swift in Sources */,
+				40BFFCE227DB07C00000B7C3 /* ImagePickerView.swift in Sources */,
 				4093B78827D997BA0095658F /* ImageSaver.swift in Sources */,
 				40403E1A27BD3B4000CA259E /* DanielPhotoAppApp.swift in Sources */,
 				40DEA12A27C7E75E000849CD /* Coordinator.swift in Sources */,

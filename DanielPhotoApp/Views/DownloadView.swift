@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+//TO-DO
+//Fetch the list of all pictures
 
 struct DownloadView: View {
     @State private var requestImage: String = ""
@@ -30,6 +32,7 @@ struct DownloadView: View {
         {
             Image(systemName: "checkmark.circle.fill")
                 .font(.system(size: 56.0))
+            Text("Check your albums")
             DismissingView()
         }
         

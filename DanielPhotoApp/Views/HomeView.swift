@@ -16,6 +16,7 @@ struct HomeView: View {
   @State private var showingImagePicker = false
   @State private var showingSelectedImage = false
   @State public var inputImage: UIImage?
+  @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
 
     
   // 2
@@ -42,19 +43,39 @@ struct HomeView: View {
           Spacer()
         }
           Spacer()
-          
-          Button(action:
-                  {
-              showingImagePicker = true
-          })
-          {
-              Text("Select a Picture")
+          HStack{
+              Button(action:
+                      {
+                  self.sourceType = .photoLibrary
+                  showingImagePicker.toggle()
+              })
+              {
+                  Text("Select A Photo 🎞")
+              }
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(Color(.secondarySystemBackground))
+            .cornerRadius(12)
+            .padding()
+              Text("OR")
+              
+              Button(action:
+                      {
+                  self.sourceType = .camera
+                  
+                  showingImagePicker.toggle()
+              })
+              {
+                  Text("Take a Photo       📸")
+              }
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(Color(.secondarySystemBackground))
+            .cornerRadius(12)
+            .padding()
+              
           }
-        .padding()
-        .frame(maxWidth: .infinity)
-        .background(Color(.secondarySystemBackground))
-        .cornerRadius(12)
-        .padding()
+         
           
           
           
@@ -110,7 +131,8 @@ struct HomeView: View {
     .navigationViewStyle(StackNavigationViewStyle())
     .onChange(of: inputImage) { _ in loadImage() }
     .sheet(isPresented: $showingImagePicker) {
-        ImagePicker(image: $inputImage)
+        ImagePickerView(selectedImage: self.$inputImage, sourceType: self.sourceType)
+        
     }
       
      
