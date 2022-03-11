@@ -59,7 +59,7 @@ public class DatabaseFunctions: ObservableObject
     public func fetchImage(key: String, completion: @escaping (UIImage?) -> ())
     {
         let storageRef = storage.reference(withPath: "images/\(key).jpg")
-        storageRef.getData(maxSize: 4 * 1024 * 1024)
+        storageRef.getData(maxSize: 15 * 1024 * 1024)
         {
             [weak self ] (data, error) in
             

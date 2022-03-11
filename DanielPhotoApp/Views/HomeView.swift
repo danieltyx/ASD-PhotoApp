@@ -12,10 +12,11 @@ import GoogleSignIn
 struct HomeView: View {
   // 1
   @EnvironmentObject var viewModel: AuthenticationViewModel
-  @State private var image: Image?
+  @State public var image: Image?
   @State private var showingImagePicker = false
   @State private var showingSelectedImage = false
-  @State private var inputImage: UIImage?
+  @State public var inputImage: UIImage?
+
     
   // 2
   private let user = GIDSignIn.sharedInstance.currentUser
@@ -25,15 +26,6 @@ struct HomeView: View {
       VStack {
         HStack {
           // 3
-          
-            Button(action:
-                    {
-                showingImagePicker = true
-            })
-            {
-                Text("Show Gallery")
-            }
-            
           NetworkImage(url: user?.profile?.imageURL(withDimension: 200))
             .aspectRatio(contentMode: .fit)
             .frame(width: 100, height: 100, alignment: .center)
@@ -49,6 +41,15 @@ struct HomeView: View {
           
           Spacer()
         }
+          Spacer()
+          
+          Button(action:
+                  {
+              showingImagePicker = true
+          })
+          {
+              Text("Select a Picture")
+          }
         .padding()
         .frame(maxWidth: .infinity)
         .background(Color(.secondarySystemBackground))
@@ -56,43 +57,41 @@ struct HomeView: View {
         .padding()
           
           
-          Button("Save Image") {
-              guard let inputImage = inputImage else { return }
+          
+          NavigationLink(destination:SingleImageView(uploadImage: $inputImage))
+          {
+              Text("Upload")
+          }
+          .padding()
+          .frame(maxWidth: .infinity)
+          .background(Color(.secondarySystemBackground))
+          .cornerRadius(12)
+          .padding()
 
-              let imageSaver = ImageSaver()
-              imageSaver.writeToPhotoAlbum(image: inputImage)
-              
-            
-             
-          }
+//          Button("Show Selected Image")
+//          {
+//              print("&&&&&&&&&&&&&&&&&1")
+//              guard let inputImage = inputImage else { return }
+//              print(inputImage)
+//              print("&&&&&&&&&&&&&&&&&2")
+//             // self.showingSelectedImage = true
+//          }
           
-          Button("Show Selected Image")
+          
+          
+          
+          NavigationLink(destination: DownloadView())
           {
-              guard let inputImage = inputImage else { return }
-              showingSelectedImage = true
+              Text("Download")
           }
-          
-          Button("Test Download")
-          {
-              let databaseFunctionObject = DatabaseFunctions.sharedInstance
-              databaseFunctionObject.fetchImage(key: "rpslogo") { image in
-                       let imageSaver = ImageSaver()
-                       imageSaver.writeToPhotoAlbum(image: image!)
-                   }
-          }
+          .padding()
+          .frame(maxWidth: .infinity)
+          .background(Color(.secondarySystemBackground))
+          .cornerRadius(12)
+          .padding()
           
           
-          Button("Test Upload to Firebase")
-          {
-              let databaseFunctionObject = DatabaseFunctions.sharedInstance
-              if let image = UIImage(named: "rpslogo.png")
-              {
-                  databaseFunctionObject.uploadImage(image: image, key: "rpslogo")
-              }
-              
-          }
           
-        Spacer()
         
         // 4
         Button(action: viewModel.signOut) {
@@ -104,24 +103,16 @@ struct HomeView: View {
             .cornerRadius(12)
             .padding()
         }
+          
       }
       .navigationTitle("DanielPhotoApp")
-        
-        
-        
-        
     }
     .navigationViewStyle(StackNavigationViewStyle())
-   // .onChange(of: inputImage) { _ in loadImage() }
-    .sheet(isPresented: $showingSelectedImage) {
-    
-       Image(uiImage: inputImage!)
-        
-    }
+    .onChange(of: inputImage) { _ in loadImage() }
     .sheet(isPresented: $showingImagePicker) {
-        ImagePickerView(selectedImage: $inputImage, sourceType: .photoLibrary)
-        
+        ImagePicker(image: $inputImage)
     }
+      
      
  
   }

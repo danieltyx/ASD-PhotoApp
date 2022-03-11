@@ -16,24 +16,30 @@ struct LoginView: View {
   var body: some View {
     VStack {
       Spacer()
-
+        Spacer()
+        Spacer()
       // 2
       Image("header_image")
         .resizable()
         .aspectRatio(contentMode: .fit)
-
-      Text("Welcome to Ellifit!")
+        .padding()
+        Spacer()
+        Spacer()
+        Spacer()
+      Text("Welcome to DPH!")
         .fontWeight(.black)
         .foregroundColor(Color(.systemIndigo))
         .font(.largeTitle)
         .multilineTextAlignment(.center)
-
-      Text("Empower your elliptical workouts by tracking every move.")
+        .padding()
+        
+        
+      Text("Please login to continue, we may ask for your permission to access your photos.")
         .fontWeight(.light)
         .multilineTextAlignment(.center)
         .padding()
 
-      Spacer()
+      
 
       // 3
       GoogleSignInButton()

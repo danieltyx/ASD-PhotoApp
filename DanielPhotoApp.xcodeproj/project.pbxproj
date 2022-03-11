@@ -19,13 +19,14 @@
 		40403E3427BD3B8000CA259E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 40403E3327BD3B8000CA259E /* GoogleSignIn */; };
 		40403E3627BD3BA600CA259E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40403E3527BD3BA600CA259E /* GoogleService-Info.plist */; };
 		4093B78827D997BA0095658F /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093B78727D997BA0095658F /* ImageSaver.swift */; };
-		4093B78A27D99AED0095658F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093B78927D99AED0095658F /* ImagePicker.swift */; };
+		40BFFCDD27DA669F0000B7C3 /* SingleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFFCDC27DA669F0000B7C3 /* SingleImageView.swift */; };
+		40BFFCE027DB00480000B7C3 /* DownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFFCDF27DB00480000B7C3 /* DownloadView.swift */; };
 		40DEA12227C5601E000849CD /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DEA12127C5601E000849CD /* AuthenticationViewModel.swift */; };
 		40DEA12427C5669F000849CD /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DEA12327C5669F000849CD /* GoogleSignInButton.swift */; };
 		40DEA12627C566B8000849CD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DEA12527C566B8000849CD /* LoginView.swift */; };
 		40DEA12827C5674F000849CD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DEA12727C5674F000849CD /* HomeView.swift */; };
 		40DEA12A27C7E75E000849CD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DEA12927C7E75E000849CD /* Coordinator.swift */; };
-		40DEA12C27C7E9C8000849CD /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DEA12B27C7E9C8000849CD /* ImagePickerView.swift */; };
+		40DEA12C27C7E9C8000849CD /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DEA12B27C7E9C8000849CD /* ImagePicker.swift */; };
 		40DEA12E27CD21BE000849CD /* Databasefunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DEA12D27CD21BE000849CD /* Databasefunctions.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,13 +39,14 @@
 		40403E3527BD3BA600CA259E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		40403E3727BD3DD200CA259E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4093B78727D997BA0095658F /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
-		4093B78927D99AED0095658F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		40BFFCDC27DA669F0000B7C3 /* SingleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageView.swift; sourceTree = "<group>"; };
+		40BFFCDF27DB00480000B7C3 /* DownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadView.swift; sourceTree = "<group>"; };
 		40DEA12127C5601E000849CD /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		40DEA12327C5669F000849CD /* GoogleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInButton.swift; sourceTree = "<group>"; };
 		40DEA12527C566B8000849CD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		40DEA12727C5674F000849CD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		40DEA12927C7E75E000849CD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		40DEA12B27C7E9C8000849CD /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		40DEA12B27C7E9C8000849CD /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		40DEA12D27CD21BE000849CD /* Databasefunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Databasefunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,14 +88,10 @@
 			children = (
 				40403E3727BD3DD200CA259E /* Info.plist */,
 				40403E1927BD3B4000CA259E /* DanielPhotoAppApp.swift */,
-				4093B78927D99AED0095658F /* ImagePicker.swift */,
-				4093B78727D997BA0095658F /* ImageSaver.swift */,
 				4093B78B27D99E5E0095658F /* Views */,
-				40DEA12927C7E75E000849CD /* Coordinator.swift */,
-				40DEA12127C5601E000849CD /* AuthenticationViewModel.swift */,
+				40BFFCDE27DAF50E0000B7C3 /* Models */,
 				40403E3527BD3BA600CA259E /* GoogleService-Info.plist */,
 				40403E1D27BD3B4200CA259E /* Assets.xcassets */,
-				40DEA12D27CD21BE000849CD /* Databasefunctions.swift */,
 				40403E1F27BD3B4200CA259E /* Preview Content */,
 			);
 			path = DanielPhotoApp;
@@ -112,11 +110,24 @@
 			children = (
 				40DEA12527C566B8000849CD /* LoginView.swift */,
 				40DEA12727C5674F000849CD /* HomeView.swift */,
-				40DEA12327C5669F000849CD /* GoogleSignInButton.swift */,
-				40DEA12B27C7E9C8000849CD /* ImagePickerView.swift */,
+				40BFFCDC27DA669F0000B7C3 /* SingleImageView.swift */,
+				40BFFCDF27DB00480000B7C3 /* DownloadView.swift */,
 				40403E1B27BD3B4000CA259E /* ContentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		40BFFCDE27DAF50E0000B7C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				40DEA12327C5669F000849CD /* GoogleSignInButton.swift */,
+				40DEA12B27C7E9C8000849CD /* ImagePicker.swift */,
+				4093B78727D997BA0095658F /* ImageSaver.swift */,
+				40DEA12927C7E75E000849CD /* Coordinator.swift */,
+				40DEA12D27CD21BE000849CD /* Databasefunctions.swift */,
+				40DEA12127C5601E000849CD /* AuthenticationViewModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,14 +213,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40BFFCE027DB00480000B7C3 /* DownloadView.swift in Sources */,
+				40BFFCDD27DA669F0000B7C3 /* SingleImageView.swift in Sources */,
 				40DEA12427C5669F000849CD /* GoogleSignInButton.swift in Sources */,
 				40DEA12227C5601E000849CD /* AuthenticationViewModel.swift in Sources */,
 				40403E1C27BD3B4000CA259E /* ContentView.swift in Sources */,
 				40DEA12827C5674F000849CD /* HomeView.swift in Sources */,
-				40DEA12C27C7E9C8000849CD /* ImagePickerView.swift in Sources */,
+				40DEA12C27C7E9C8000849CD /* ImagePicker.swift in Sources */,
 				40DEA12E27CD21BE000849CD /* Databasefunctions.swift in Sources */,
 				40DEA12627C566B8000849CD /* LoginView.swift in Sources */,
-				4093B78A27D99AED0095658F /* ImagePicker.swift in Sources */,
 				4093B78827D997BA0095658F /* ImageSaver.swift in Sources */,
 				40403E1A27BD3B4000CA259E /* DanielPhotoAppApp.swift in Sources */,
 				40DEA12A27C7E75E000849CD /* Coordinator.swift in Sources */,
@@ -348,6 +360,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DanielPhotoApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take a photo :)";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We want to save the photo to your devise : )";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -382,6 +395,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DanielPhotoApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take a photo :)";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We want to save the photo to your devise : )";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

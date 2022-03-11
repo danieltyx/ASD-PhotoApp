@@ -1,11 +1,10 @@
 //
-//  ImagePicker.swift
+//  ImagePickerView.swift
 //  DanielPhotoApp
 //
-//  Created by Daniel on 3/9/22.
+//  Created by Daniel on 2/24/22.
 //
 
-import Foundation
 import PhotosUI
 import SwiftUI
 

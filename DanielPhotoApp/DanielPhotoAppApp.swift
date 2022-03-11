@@ -11,11 +11,12 @@ import Firebase
 @main
 struct DanielPhotoAppApp: App {
     @StateObject var viewModel = AuthenticationViewModel()
-
       init() {
         setupAuthentication()
       }
+
     
+   
     var body: some Scene {
         WindowGroup {
             ContentView()
